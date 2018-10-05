@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TextField, List, ListItem, ListItemText } from '@material-ui/core';
-import { AppBar } from '@material-ui/core/AppBar';
 import firebase from 'firebase';
 import './App.css';
 
@@ -54,16 +53,14 @@ class App extends Component {
   
   renderMessages = () => {
     return this.state.messages.map((message) =>
-      <AppBar>
-        <ListItem>
-          <ListItemText 
-            style={{ wordBreak: "break-word" }}
-            primary={ message.text }
-          >
-            {message.text}
-          </ListItemText>
-        </ListItem>
-      </AppBar>
+      <ListItem>
+        <ListItemText 
+          style={{ wordBreak: "break-word" }}
+          primary={ message.text }
+        >
+          {message.text}
+        </ListItemText>
+      </ListItem>
     )
   }
 
